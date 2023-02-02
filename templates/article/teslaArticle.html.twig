@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello You !{% endblock %}
+{% block style %} /assets/css/style.css{% endblock %}
+
+
+{% block body %}
+    {% block content %}
+        {% if articles %}
+        <div class="article">
+            <h1>Articles Tesla</h1>
+             <div id="link">
+                <a class="link" href="/general">Articles Générales</a>
+                <a class="link" href="/apple">Articles Apple</a>
+            </div>
+            {% for article in articles.articles %}
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.description }}</p>
+                <img src="{{ article.urlToImage }}" alt="">
+        </div
+            {% endfor %}
+        {% endif %}
+    {% endblock %}
+{% endblock %}
